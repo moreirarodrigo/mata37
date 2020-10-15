@@ -3,38 +3,20 @@
 
 using namespace std;
 
-int main(){
+int main() {
     double salario, reajuste;
+
     cin >> salario;
-    if(salario>0 && salario<=400){
-        reajuste = salario+(salario*0.15);
-        cout << "Novo salario: " << fixed << setprecision(2) << reajuste << endl;
-        cout << "Reajuste ganho: " << fixed << setprecision(2) << reajuste-salario << endl;
-        cout << "Em percentual: 15 %"<< endl;
-    }
-    if(salario>=400.01 && salario<=800){
-        reajuste = salario+(salario*0.12);
-        cout << "Novo salario: " << fixed << setprecision(2) << reajuste << endl;
-        cout << "Reajuste ganho: " << fixed << setprecision(2) << reajuste-salario << endl;
-        cout << "Em percentual: 12 %"<< endl;
-    }
-    if(salario>=800.01 && salario<=1200){
-        reajuste = salario+(salario*0.10);
-        cout << "Novo salario: " << fixed << setprecision(2) << reajuste << endl;
-        cout << "Reajuste ganho: " << fixed << setprecision(2) << reajuste-salario << endl;
-        cout << "Em percentual: 10 %"<< endl;
-    }
-    if(salario>=1200.01 && salario<=2000){
-        reajuste = salario+(salario*0.07);
-        cout << "Novo salario: " << fixed << setprecision(2) << reajuste << endl;
-        cout << "Reajuste ganho: " << fixed << setprecision(2) << reajuste-salario << endl;
-        cout << "Em percentual: 7 %"<< endl;
-    }
-    if(salario>2000){
-        reajuste = salario+(salario*0.04);
-        cout << "Novo salario: " << fixed << setprecision(2) << reajuste << endl;
-        cout << "Reajuste ganho: " << fixed << setprecision(2) << reajuste-salario << endl;
-        cout << "Em percentual: 4 %"<< endl;
-    }
+
+    if(salario>0 && salario<=400) reajuste = 0.15;
+    else if(salario>=400.01 && salario<=800) reajuste = 0.12;
+    else if(salario>=800.01 && salario<=1200) reajuste = 0.10;
+    else if(salario>=1200.01 && salario<=2000) reajuste = 0.07;
+    else if(salario>2000) reajuste = 0.04;
+
+    cout << "Novo salario: " << fixed << setprecision(2) << salario+(salario*reajuste) << endl;
+    cout << "Reajuste ganho: " << fixed << setprecision(2) << salario*reajuste << endl;
+    cout << "Em percentual: " << fixed << setprecision(0) << reajuste*100 << " %"<< endl;
+
     return 0;
 }

@@ -2,19 +2,22 @@
 
 using namespace std;
 
-void organiza(int &a, int &b, int &c){
+void organiza(int &a, int &b, int &c) {
 	int temp;
-	if(a>b){
+
+	if(a>b) {
 		temp = a;
 		a = b;
 		b = temp;
 	}
-	if(a>c){
+
+	if(a>c) {
 		temp = a;
 		a = c;
 		c = temp;
 	}
-	if(b>c){
+
+	if(b>c) {
 		temp = b;
 		b = c;
 		c = temp;
@@ -23,10 +26,13 @@ void organiza(int &a, int &b, int &c){
 
 int main() {
 	int a, b, c, d, e, f;
+
 	cin >> a >> b >> c;
+
 	d = a;
 	e = b;
 	f = c;
+
 	organiza(a, b, c);
 	cout << a << endl;
 	cout << b << endl;
@@ -35,5 +41,6 @@ int main() {
 	cout << d << endl;
 	cout << e << endl;
 	cout << f << endl;
+	
 	return 0;
 }

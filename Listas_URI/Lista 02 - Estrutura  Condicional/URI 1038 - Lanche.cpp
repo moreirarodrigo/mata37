@@ -3,11 +3,13 @@
 
 using namespace std;
 
-int main(){
+int main() {
     int codigo, quantidade;
+
     cin >> codigo;
     cin >> quantidade;
-    switch(codigo){
+
+    switch(codigo) {
     case 1:
         cout << "Total: R$ " << fixed << setprecision(2) << 4.00*quantidade<<endl;
         break;
@@ -26,5 +28,6 @@ int main(){
     default:
         break;
     }
+    
     return 0;
 }
